@@ -1,6 +1,6 @@
 package day07;
 
-public class Hand {
+public class NodeHand {
 	String cards;
 	int bid;
 	int rank;

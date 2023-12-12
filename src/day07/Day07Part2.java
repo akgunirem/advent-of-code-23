@@ -10,9 +10,9 @@ public class Day07Part2 {
 	
 	public static void main(String[] args) {
 		int sum=0;
-		ArrayList<Hand> arrHands = new ArrayList<>();
+		ArrayList<NodeHand> arrHands = new ArrayList<>();
         for (String line : File.readLines("input07.txt")) {
-            Hand hand = new Hand();
+            NodeHand hand = new NodeHand();
             String cards = line.split(" ")[0];
             hand.cards = cards;
             hand.bid = Integer.parseInt(line.split(" ")[1]);
@@ -27,7 +27,7 @@ public class Day07Part2 {
 		System.out.println(sum); // 250757288
 	}
 
-	static int getType(Hand hand) {
+	static int getType(NodeHand hand) {
 		String input=hand.cards;
 		int count = 0;
 		HashMap<Character, Integer> charCounts = new HashMap<>();
@@ -66,7 +66,7 @@ public class Day07Part2 {
 		}
 	}
 	
-	static void sortHands(ArrayList<Hand> arrHands) {
+	static void sortHands(ArrayList<NodeHand> arrHands) {
 		HashMap<Character, Integer> cardValues = new HashMap<>();
         cardValues.put('A', 14);
         cardValues.put('K', 13);
@@ -99,8 +99,8 @@ public class Day07Part2 {
 		}
 	}
 	
-	static void swap(ArrayList<Hand> arrHands, int i, int j) {
-        Hand temp = arrHands.get(i);
+	static void swap(ArrayList<NodeHand> arrHands, int i, int j) {
+        NodeHand temp = arrHands.get(i);
         arrHands.set(i, arrHands.get(j));
         arrHands.set(j, temp);
     }
