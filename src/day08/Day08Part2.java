@@ -70,7 +70,7 @@ public class Day08Part2 {
         return max * min;
     }
 
-    static long findLCM(long[] countList) {
+	static long findLCM(long[] countList) {
         long lcm = 1L;
         for (long count : countList) {
             lcm = findLCM(lcm, count);
